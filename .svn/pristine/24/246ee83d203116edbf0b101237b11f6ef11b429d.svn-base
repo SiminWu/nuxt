@@ -1,0 +1,183 @@
+<template>
+      <div>
+          <div class="search-index">
+                <Select class="select-wrap" v-model="searchAll.typesearch" style="width:100px">
+                    <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                </Select> 
+              <span>
+                <Select v-if="searchAll.typesearch==5" class="select-wrap" v-model="model1" style="width:185px" placeholder="请选择进出口">
+                    <Option v-for="item in customs" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                </Select>
+                <Select v-else-if="searchAll.typesearch==6" class="select-wrap" v-model="model1" style="width:185px" placeholder="请选择仓储类型">
+                    <Option v-for="item in storageList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                </Select>
+                <div v-else>
+                  <Input v-model="searchAll.startP" @on-keyup="startInput" @on-blur="blurInput"  size="large"  placeholder="起始地" />
+                  <div class="search-item">
+                    <ul>
+                      <li v-for="(item,index) in startPList"  :key="index">{{item.text}}</li>
+                    </ul>
+                  </div>
+                </div>
+              </span>
+              <span>
+                <Input v-model="searchAll.endP"  @on-keyup="endPInput"  @on-blur="blurInput" size="large"  placeholder="起始地" />   
+                <div class="search-item">
+                  <ul>
+                  <li v-for="(item,index) in endPList"  :key="index">{{item.text}}</li>
+                  </ul>
+                </div>         
+              </span>
+              <Button class="red-btn" icon="ios-search">搜索</Button>
+          </div>
+          <div class="msg-carousel">
+            <Carousel easing="fadeOutUp" dots="none" :autoplay-speed="3000" autoplay loop>
+              <CarouselItem>
+                  <div class="demo-carousel">【1跨境铁路货盘】李先生,广州市-俄罗斯海明威,整箱,货物名称,截止时间：8月16号...</div>
+              </CarouselItem>
+              <CarouselItem>
+                  <div class="demo-carousel">【2跨境铁路货盘】李先生,广州市-俄罗斯海明威,整箱,货物名称,截止时间：8月16号...</div>
+              </CarouselItem>
+              <CarouselItem>
+                  <div class="demo-carousel">【3跨境铁路货盘】李先生,广州市-俄罗斯海明威,整箱,货物名称,截止时间：8月16号...</div>
+              </CarouselItem>
+              <CarouselItem>
+                  <div class="demo-carousel">【4跨境铁路货盘】李先生,广州市-俄罗斯海明威,整箱,货物名称,截止时间：8月16号...</div>
+              </CarouselItem>
+            </Carousel>
+          </div>
+      </div>
+    
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        cityList: [
+          {
+            value: '1',
+            label: '海运'
+          },
+          {
+            value: '2',
+            label: '空运'
+          },
+          {
+            value: '3',
+            label: '陆运'
+          },
+          {
+            value: '4',
+            label: '铁路'
+          },
+          {
+            value: '5',
+            label: '报关'
+          },
+          {
+            value: '6',
+            label: '仓储'
+          },
+          {
+            value: '7',
+            label: '快递'
+          }
+
+        ],
+        customs:[//首页搜索报关选项下拉
+           {
+            value: '1',
+            label: '进口'
+          },
+           {
+            value: '2',
+            label: '出口'
+          }
+        ],
+        storageList:[
+          {
+            value: '1',
+            label: '保税仓'
+          },
+           {
+            value: '2',
+            label: '非保税仓'
+          },
+           {
+            value: '3',
+            label: '海外仓'
+          }
+        ],
+        model1: '',
+       
+        startPList:[],
+        endPList:[],
+        searchAll:{//搜索条件
+             typesearch:'',//类型
+             startP:'',
+             endP:'',
+        },
+      
+      }
+    },
+     methods:{
+        startInput(event){
+          console.log(event);
+          console.log(event.target.value)
+          this.startPList=[{"text":event.target.value}];
+        },
+        endPInput(event){
+          console.log(event.target.value);
+          this.endPList=[{"text":event.target.value}];
+        },
+        //失去焦点清除提示表
+        blurInput(){
+            this.startPList=[];
+            this.endPList=[];
+        }
+
+     }
+  }
+</script>
+
+<style  lang="scss" scoped>
+    .search-index{
+    
+      display: inline-block;
+      
+      &>span{
+        display: inline-block;
+          input{
+            border-radius: 0;
+          }
+      }
+  
+      &>span:last-child{
+        border-right: $border-red; 
+        
+      }
+      .select-wrap{
+        border-radius:0;
+      
+      }
+      .msg-carousel{
+        width: 500px;
+      }
+      
+    }
+    .search-item{
+        position: absolute;
+        // display: none;
+        &>ul>li{
+          line-height: 24px;
+        }
+      }
+      .red-btn{
+          background: red;
+          line-height: 25px;
+          border-radius: 0;
+          color: white;
+
+      }
+</style>

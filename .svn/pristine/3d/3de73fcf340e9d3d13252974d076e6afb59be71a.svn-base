@@ -1,0 +1,94 @@
+<template>
+  <div>
+    <div class="bg-black">
+      <!--顶部-->
+      <header>
+        <div class="top-nav-center">
+          <div class="nav-left inline-sub hand">手机昊链</div>
+          <div class="inline-sub">
+            <ul class="nav-right">
+              <li>登录</li>
+              <li>注册</li>
+              <li>我的消息</li>
+              <li>货主中心</li>
+              <li>商户中心</li>
+              <li>
+               <span> 在线客服</span>
+                <div class="hot-line">电话：400</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </header>
+
+      <!--<Button type="primary">Primary</Button>-->
+    </div>
+
+    <nuxt/>
+  </div>
+</template>
+<style  lang="scss">
+  .top-nav-center{
+    position:relative;
+    flex-direction: row;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    justify-content: space-around;
+    margin-left:-100px;
+    margin-right:-100px;
+    min-width: 1280px;
+    .inline-sub{
+
+
+    }
+    .nav-left{
+      height: 18px;
+      line-height: 18px;
+      margin: 10px 0;
+
+    }
+    .nav-right{
+      display: flex;
+      display: -webkit-flex; /* Safari */
+      margin: 10px 0;
+      li{
+        border-right:1px solid white;
+        padding:0 10px ;
+        &:hover{
+          cursor:pointer;
+          .hot-line{
+            display: block;
+          }
+        }
+
+       }
+      li:last-child{
+        border-right:none;
+      }
+    }
+    .hot-line{
+      position: absolute;
+      background: white;
+      color: black;
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: none;
+    }
+
+  }
+
+</style>
+<script>
+  export default {
+    data () {
+      return {
+
+      }
+    }
+  }
+</script>
+
+
+

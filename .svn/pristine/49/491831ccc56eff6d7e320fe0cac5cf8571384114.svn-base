@@ -1,0 +1,150 @@
+<template>
+  <section class="container">
+    <!-- 广告 -->
+    <carousel class="banner-slider">
+      <div class="nav-list" >
+        <div class="nav-item" v-for="(item,index) in navList" :key="index">
+          <span>{{item.label}}</span>
+          <ul class="first-nav-wrap">
+            <li  v-for="(ite,ind) in item.children" :key="ind">{{ite.label}}</li>
+          </ul>
+        </div>
+      </div>
+      
+    </carousel>
+    <div>
+      <a href="/users">users</a>
+    </div>
+   
+  </section>
+</template>
+
+<script>
+//import AppLogo from '~/components/AppLogo.vue'
+import carousel from '~/components/carousel/carousel.vue'
+
+export default {
+  components: {
+   carousel
+  },
+  layout: 'top-nav',
+  data(){
+    return{
+      navList:[
+        {
+          label:"国际海运",
+          children:[
+            {label:'整箱'},
+            {label:'拼箱'},
+            {label:'危险品'},
+            {label:'特种柜'},
+          ]
+        },
+        {
+          label:"国际空运",
+          children:[
+            {label:'欧洲'},
+            {label:'美洲'},
+            {label:'非洲'},
+            {label:'大洋洲'},
+            {label:'亚洲'},
+            {label:'国内航线'},
+          ]
+        },
+        {
+          label:"国际快递",
+          children:[
+            {label:'商业快递'},
+            {label:'邮政快递'},
+            {label:'专线快递'}
+          ]
+        },
+        {
+          label:"陆运",
+          children:[
+            {label:'整柜拖车'},
+            {label:'吨车运输'},
+            {label:'跨境运输'}
+          ]
+        },
+         {
+          label:"报关",
+          children:[
+            {label:'进口'},
+            {label:'出口'}
+          ]
+        },
+        {
+          label:"跨境铁路",
+          children:[
+            {label:'中俄'},
+            {label:'中亚'},
+            {label:'中欧'}
+          ]
+        },
+        {
+          label:"仓储",
+          children:[
+            {label:'保税仓'},
+            {label:'非保税仓'},
+            {label:'海外仓'}
+          ]
+        },
+         {
+          label:"货运保险",
+          children:[
+            {label:'平安'},
+            {label:'PICC'},
+            {label:'AIG'},
+            {label:'大众保险'},
+            {label:'阳光财险'},
+            {label:'太平洋'}
+
+          ]
+        },
+
+      ]
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+
+.container {
+  .banner-slider{
+    position: relative;
+  }
+  align-items: center;
+  text-align: center;
+  .ivu-carousel-list{
+    height: 100%;
+    background: #ccc;
+    color:white;
+    font-size: 40px;
+  }
+  .nav-list{
+    position: absolute;
+    top: 0;
+    left: 5%;
+    color: #ccc;
+    background:rgba(0, 0, 0, 0.68);
+    text-align: left;
+    padding: 20px 20px;
+    .nav-item{
+      position: relative;
+      margin-bottom: 15px;
+    }
+    .first-nav-wrap{
+      display: flex;
+      li{
+        padding:5px 15px 5px 0;
+      }
+      
+    }
+  }
+}
+
+
+</style>
+

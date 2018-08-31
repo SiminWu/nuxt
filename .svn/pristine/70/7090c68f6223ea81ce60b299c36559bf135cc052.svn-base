@@ -1,0 +1,376 @@
+<template>
+  <div>
+    <section class="container">
+      <!-- 广告 -->
+      <carousel class="banner-slider">
+      <!-- 左侧二级导航 -->
+        <div class="nav-list" >
+          <div class="nav-item" v-for="(item,index) in navList" :key="index">
+            <span>{{item.label}}</span>
+            <ul class="first-nav-wrap">
+              <li  v-for="(ite,ind) in item.children" :key="ind">{{ite.label}}</li>
+            </ul>
+          </div>
+        </div>
+      <!-- 右侧详情信息 -->
+        <div class="person-detail">
+          <div class="head">
+            <img src="@/static/head.jpg" alt="头像">
+          </div>
+            <p>下午好</p>
+            <p>您还未登录,登录享受更多优质服务。</p>
+            <div class="detail-btn">
+              <Button type="primary">登陆</Button>
+              <Button type="primary">注册</Button>
+            </div>
+            <h2 class="person-title">
+              <span>发现好靓价</span>
+              <span>传播昊链牛</span>
+            </h2>
+            <ul class="person-contain">
+              <li>
+                <h1>2345</h1><span> 家货主收录</span>
+              </li>
+              <li>
+                <h1>2345</h1><span> 家服务商收录</span>
+              </li>
+              <li>
+                <h1>2345</h1><span> 位用户点评</span>
+              </li>
+            </ul>
+        </div>
+      </carousel>
+      <!-- 活动专栏 -->
+      <div class="index-contain">
+        <div class="activity-wrap">
+          <div class="activity">
+            <label class="label">活动专栏</label>
+            <div class="advertising">
+              
+            </div>
+          </div>
+          <!-- 行业应用 -->
+          <div class="apply">
+            <label class="label">活动专栏</label>
+            <Carousel dots="none" arrow="never" easing="fadeOut"  :autoplay-speed="3000"  autoplay >
+              <CarouselItem v-for="(item,index) in applyList" :key="index">
+                  <div>
+                    <ul class="ul-apply">
+                      <li  v-for="(ite,ind) in item" :key="ind">
+                        <div></div>
+                        <p>{{ite.label}}</p>
+                      </li>
+                    </ul>
+                  </div>
+              </CarouselItem> 
+          </Carousel>
+          </div>
+          <!-- 用户心声 -->
+          <div  class="user-voice-wrap">
+            <label class="label">用户心声</label>
+            <div class="user-voice">
+              <p><span></span></p>
+              <Carousel dots="none" arrow="never" easing="fadeOut" :autoplay-speed="3000"  autoplay >
+                <CarouselItem>
+                    <div>
+                      <p>2013-01-01 25:23:00</p>
+                      <div>用户心声</div>
+                    </div>
+                </CarouselItem> 
+            </Carousel>
+            </div>
+          </div>
+        </div>
+          <div  class="more-shop-wrap">
+            <label class="lebal">更多服务商</label>
+            <div>
+              <shop></shop>
+            </div>
+            
+          </div>
+          <div>
+            <a href="/users">users</a>
+          </div>
+      </div>
+     
+    </section>
+  </div>
+  
+</template>
+
+<script>
+//import AppLogo from '~/components/AppLogo.vue'
+import carousel from '~/components/carousel/carousel.vue'
+import shop from '~/components/shop/shop.vue'
+export default {
+  components: {
+   carousel,
+   shop
+  },
+  layout: 'main',
+  data(){
+    return{
+      navList:[
+        {
+          label:"国际海运",
+          children:[
+            {label:'整箱'},
+            {label:'拼箱'},
+            {label:'危险品'},
+            {label:'特种柜'},
+          ]
+        },
+        {
+          label:"国际空运",
+          children:[
+            {label:'欧洲'},
+            {label:'美洲'},
+            {label:'非洲'},
+            {label:'大洋洲'},
+            {label:'亚洲'},
+            {label:'国内航线'},
+          ]
+        },
+        {
+          label:"国际快递",
+          children:[
+            {label:'商业快递'},
+            {label:'邮政快递'},
+            {label:'专线快递'}
+          ]
+        },
+        {
+          label:"陆运",
+          children:[
+            {label:'整柜拖车'},
+            {label:'吨车运输'},
+            {label:'跨境运输'}
+          ]
+        },
+         {
+          label:"报关",
+          children:[
+            {label:'进口'},
+            {label:'出口'}
+          ]
+        },
+        {
+          label:"跨境铁路",
+          children:[
+            {label:'中俄'},
+            {label:'中亚'},
+            {label:'中欧'}
+          ]
+        },
+        {
+          label:"仓储",
+          children:[
+            {label:'保税仓'},
+            {label:'非保税仓'},
+            {label:'海外仓'}
+          ]
+        },
+         {
+          label:"货运保险",
+          children:[
+            {label:'平安'},
+            {label:'PICC'},
+            {label:'AIG'},
+            {label:'大众保险'},
+            {label:'阳光财险'},
+            {label:'太平洋'}
+
+          ]
+        },
+
+      ],
+      applyList:[[
+        {label:"船公司查询"},
+        {label:"全球港口查询"},
+        {label:"航空公司查询"},
+        {label:"机场三字码"},
+        {label:"HScode"},
+        {label:"集装箱参数"},   
+      ],[
+        {label:"危险品标志"},
+        {label:"危险品名"},
+        {label:"附加费缩写"},
+        {label:"港口地图"},
+        {label:"贸易术语"},
+        {label:"货物跟踪"},   
+      ],[
+        {label:"国家地区代码"},
+        {label:"报关单查询"},
+        {label:"单位换算"},
+        {label:"世界货币"} 
+      ]],
+  
+    
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+ .label{
+          text-align: left;
+          line-height: 30px;
+          height: 30px;
+  }
+.container {
+  .banner-slider{
+    position: relative;
+  }
+  align-items: center;
+  text-align: center;
+ 
+ 
+  .nav-list{
+    position: absolute;
+    top: 0;
+    left: 5%;
+    color: #ccc;
+    background:rgba(0, 0, 0, 0.68);
+    text-align: left;
+    padding: 20px 20px;
+    .nav-item{
+      position: relative;
+      margin-bottom: 15px;
+    }
+    .first-nav-wrap{
+      display: flex;
+      li{
+        padding:5px 15px 5px 0;
+      }
+      
+    }
+  }
+
+  .person-detail{
+    position: absolute;
+    top: 0;
+    right: 5%;
+    background: rgba(2, 0, 0, 0.76);
+    text-align: center;
+    padding: 52px 15px;
+    .detail-btn{
+      display: flex;
+      justify-content: space-around;
+      margin: 25px 0;
+    }
+    p{
+      line-height: 25px;
+      color: #ccc;
+    }
+    .person-title{
+      color: #ccc;
+      margin: 10px 0;
+      display: flex;
+      justify-content:space-around;
+    }
+    .person-contain{
+      color: #ccc;
+      li{
+         display: flex;
+        justify-content: space-around;
+          h1{
+              display: inline-block;
+              margin-right: 10px;
+              vertical-align: middle;
+          }
+          span{
+             vertical-align: middle;
+             line-height: 36px;
+          }
+      }
+   
+    }
+
+  }
+  .head{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    box-shadow: 0 0px 26px black;
+    margin-bottom: 15px;
+    display: inline-block;
+    img{
+      width: 100%;
+      border-radius: 50%;
+      
+    }
+  }
+  // 活动专栏
+  .index-contain{
+    margin:0 8%;
+    .activity-wrap{
+      display: flex;
+      justify-content: space-between;
+      .activity{
+        margin: 20px 0;
+        display: inline-block;
+        text-align: left;
+        .advertising{
+          width: 500px;
+          height: 156px;
+          background: #aedfae;
+        }
+       
+      }
+      .apply{
+          width: 300px;
+          margin: 20px 0;
+          display: inline-block;
+          text-align: left;
+      }
+    }
+
+  }
+
+  .ul-apply{
+    border: 1px solid #ccc;
+    padding-bottom: 10px;
+    &>li{
+      width: 33%;
+      display: inline-block;
+      text-align: center;
+      &>div{
+        display: block;
+        width: 35px;
+        height: 34px;
+        background: red;
+        margin: 10px auto;
+      }
+    }
+  }
+  .user-voice-wrap{
+      margin: 20px 0;
+      display: inline-block;
+      text-align: left;
+  }
+
+  .user-voice{
+    border: 1px solid #ccc;
+    width: 200px;
+    height: 156px;
+    
+  }
+  .more-shop-wrap{
+      text-align: left;
+      .lebal{
+        display: block;
+        height: 50px;
+        line-height: 50px;
+      }
+
+  }
+ 
+
+}
+
+
+
+
+
+</style>
+

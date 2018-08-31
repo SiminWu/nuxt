@@ -1,0 +1,142 @@
+import Vue from 'vue'
+import Router from 'vue-router'
+
+Vue.use(Router)
+
+const _1d454d70 = () => import('..\\pages\\users\\index.vue' /* webpackChunkName: "pages_users_index" */).then(m => m.default || m)
+const _1d5004fe = () => import('..\\pages\\annoce\\joinus.vue' /* webpackChunkName: "pages_annoce_joinus" */).then(m => m.default || m)
+const _d8cd87d8 = () => import('..\\pages\\annoce\\finance.vue' /* webpackChunkName: "pages_annoce_finance" */).then(m => m.default || m)
+const _3a82b926 = () => import('..\\pages\\management\\sogo.vue' /* webpackChunkName: "pages_management_sogo" */).then(m => m.default || m)
+const _67f2cef4 = () => import('..\\pages\\login\\login.vue' /* webpackChunkName: "pages_login_login" */).then(m => m.default || m)
+const _6a37a7ac = () => import('..\\pages\\searchcomponent\\search-tray.vue' /* webpackChunkName: "pages_searchcomponent_search-tray" */).then(m => m.default || m)
+const _0475b3b8 = () => import('..\\pages\\my\\my-message.vue' /* webpackChunkName: "pages_my_my-message" */).then(m => m.default || m)
+const _71e06a96 = () => import('..\\pages\\login\\register.vue' /* webpackChunkName: "pages_login_register" */).then(m => m.default || m)
+const _176098ac = () => import('..\\pages\\management\\vector.vue' /* webpackChunkName: "pages_management_vector" */).then(m => m.default || m)
+const _10392643 = () => import('..\\pages\\searchcomponent\\search-price.vue' /* webpackChunkName: "pages_searchcomponent_search-price" */).then(m => m.default || m)
+const _ea0c34ac = () => import('..\\pages\\users\\_id\\index.vue' /* webpackChunkName: "pages_users__id_index" */).then(m => m.default || m)
+const _a95586c8 = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
+
+
+
+if (process.client) {
+  window.history.scrollRestoration = 'manual'
+}
+const scrollBehavior = function (to, from, savedPosition) {
+  // if the returned position is falsy or an empty object,
+  // will retain current scroll position.
+  let position = false
+
+  // if no children detected
+  if (to.matched.length < 2) {
+    // scroll to the top of the page
+    position = { x: 0, y: 0 }
+  } else if (to.matched.some((r) => r.components.default.options.scrollToTop)) {
+    // if one of the children has scrollToTop option set to true
+    position = { x: 0, y: 0 }
+  }
+
+  // savedPosition is only available for popstate navigations (back button)
+  if (savedPosition) {
+    position = savedPosition
+  }
+
+  return new Promise(resolve => {
+    // wait for the out transition to complete (if necessary)
+    window.$nuxt.$once('triggerScroll', () => {
+      // coords will be used if no selector is provided,
+      // or if the selector didn't match any element.
+      if (to.hash) {
+        let hash = to.hash
+        // CSS.escape() is not supported with IE and Edge.
+        if (typeof window.CSS !== 'undefined' && typeof window.CSS.escape !== 'undefined') {
+          hash = '#' + window.CSS.escape(hash.substr(1))
+        }
+        try {
+          if (document.querySelector(hash)) {
+            // scroll to anchor by returning the selector
+            position = { selector: hash }
+          }
+        } catch (e) {
+          console.warn('Failed to save scroll position. Please add CSS.escape() polyfill (https://github.com/mathiasbynens/CSS.escape).')
+        }
+      }
+      resolve(position)
+    })
+  })
+}
+
+
+export function createRouter () {
+  return new Router({
+    mode: 'history',
+    base: '/',
+    linkActiveClass: 'nuxt-link-active',
+    linkExactActiveClass: 'nuxt-link-exact-active',
+    scrollBehavior,
+    routes: [
+		{
+			path: "/users",
+			component: _1d454d70,
+			name: "users"
+		},
+		{
+			path: "/annoce/joinus",
+			component: _1d5004fe,
+			name: "annoce-joinus"
+		},
+		{
+			path: "/annoce/finance",
+			component: _d8cd87d8,
+			name: "annoce-finance"
+		},
+		{
+			path: "/management/sogo",
+			component: _3a82b926,
+			name: "management-sogo"
+		},
+		{
+			path: "/login/login",
+			component: _67f2cef4,
+			name: "login-login"
+		},
+		{
+			path: "/searchcomponent/search-tray",
+			component: _6a37a7ac,
+			name: "searchcomponent-search-tray"
+		},
+		{
+			path: "/my/my-message",
+			component: _0475b3b8,
+			name: "my-my-message"
+		},
+		{
+			path: "/login/register",
+			component: _71e06a96,
+			name: "login-register"
+		},
+		{
+			path: "/management/vector",
+			component: _176098ac,
+			name: "management-vector"
+		},
+		{
+			path: "/searchcomponent/search-price",
+			component: _10392643,
+			name: "searchcomponent-search-price"
+		},
+		{
+			path: "/users/:id",
+			component: _ea0c34ac,
+			name: "users-id"
+		},
+		{
+			path: "/",
+			component: _a95586c8,
+			name: "index"
+		}
+    ],
+    
+    
+    fallback: false
+  })
+}

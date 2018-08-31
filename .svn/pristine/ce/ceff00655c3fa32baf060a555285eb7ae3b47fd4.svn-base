@@ -1,0 +1,36 @@
+<template>
+  <section class="container">
+    
+    <a href="/users">users</a>
+  </section>
+</template>
+
+<script>
+//import AppLogo from '~/components/AppLogo.vue'
+//import Header from '~/components/header.vue'
+
+export default {
+  components: {
+//    AppLogo
+  },
+
+  layout: 'top-nav',
+}
+</script>
+
+<style lang="scss">
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+    .red{
+        color: red
+     }
+}
+
+
+</style>
+

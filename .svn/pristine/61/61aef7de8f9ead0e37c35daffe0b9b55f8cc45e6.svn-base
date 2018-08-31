@@ -1,0 +1,49 @@
+body,html{
+  min-width: 1280px;
+}
+body,div{
+  padding:0px;
+}
+ul li{
+list-style-type:none;
+}
+
+.bg-black{
+  background:black;
+  color:white;
+}
+.hand:hover{
+  cursor:pointer;
+}
+
+$border-red: 1px solid red;
+
+.search-index{
+  .ivu-input{
+    border-radius: 0px;
+    border: 0px;
+    border: $border-red;
+  }
+  .ivu-input:last-child{
+    border-right: 0px;
+  }
+  .ivu-select-selection{
+    border: $border-red;
+    border-radius: 0px;
+    border: 0px;
+  }
+  .ivu-select-dropdown{
+    height: 250px;
+  }
+  .ivu-select-selection{
+    height: 36px;
+    border: $border-red;
+    border-right: 0;
+  }
+}
+.contbannerainer{
+  .ivu-carousel{
+    width: 100%;
+  }
+}
+

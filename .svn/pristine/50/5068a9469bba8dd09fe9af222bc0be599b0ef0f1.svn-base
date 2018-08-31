@@ -1,0 +1,134 @@
+<template>
+     <div>
+        <div  class="shop-item"  v-for="(item,index) in shopList" :key="index">
+        <div class="shop">
+            <div class="shop-img"><img class="shop-img" :src="item.picture" alt="门店">{{src}}</div>
+            <ul class="shop-detail">
+            <li><h3>{{item.title}}</h3></li>
+            <li>
+                <span><em>成交订单：</em>{{item.order}}笔</span>
+                <span class="start-wrap"><em>用户满意度：</em><span class="start" ><Icon type="ios-heart"  v-for="(start,sindex) in item" :key="sindex"/></span></span>
+            </li>
+            <li> 
+                <em>服务：</em> 
+                <div class="traffic-item">
+                <span v-for="(traffic,tindex) in item.services" :key="tindex">{{traffic}}、</span>
+                </div>
+            </li>
+            </ul>
+        </div>   
+        </div>
+    </div>
+</template>
+<script>
+export default {
+    data(){
+        return{
+            shopList:[{
+                picture:"http://img5.qiyipic.com/image/ppopen/ppopen_58bc3cd018aa706660ad32c0_0.jpg",
+                title:"广州市凯格速物流有限公司",
+                order:145,
+                satisfaction:5,
+                services:["海运","陆运","空运","报关","仓储","快递","跨境铁路"]
+            },
+            {
+                picture:"http://img5.qiyipic.com/image/ppopen/ppopen_58bc3cd018aa706660ad32c0_0.jpg",
+                title:"广州市凯格速物流有限公司",
+                order:145,
+                satisfaction:5,
+                services:["海运","陆运","空运","报关","仓储","快递","跨境铁路"]
+            },
+            {
+                picture:"http://img5.qiyipic.com/image/ppopen/ppopen_58bc3cd018aa706660ad32c0_0.jpg",
+                title:"广州市凯格速物流有限公司",
+                order:145,
+                satisfaction:5,
+                services:["海运","陆运","空运","报关","仓储","快递","跨境铁路"]
+            },
+            {
+                picture:"http://img5.qiyipic.com/image/ppopen/ppopen_58bc3cd018aa706660ad32c0_0.jpg",
+                title:"广州市凯格速物流有限公司",
+                order:145,
+                satisfaction:5,
+                services:["海运","陆运","空运","报关","仓储","快递","跨境铁路"]
+            },
+            {
+                picture:"http://img5.qiyipic.com/image/ppopen/ppopen_58bc3cd018aa706660ad32c0_0.jpg",
+                title:"广州市凯格速物流有限公司",
+                order:145,
+                satisfaction:5,
+                services:["海运","陆运","空运","报关","仓储","快递","跨境铁路"]
+            },
+            {
+                picture:"http://img5.qiyipic.com/image/ppopen/ppopen_58bc3cd018aa706660ad32c0_0.jpg",
+                title:"广州市凯格速物流有限公司",
+                order:145,
+                satisfaction:5,
+                services:["海运","陆运","空运","报关","仓储","快递","跨境铁路"]
+            },
+            {
+                picture:"http://img5.qiyipic.com/image/ppopen/ppopen_58bc3cd018aa706660ad32c0_0.jpg",
+                title:"广州市凯格速物流有限公司",
+                order:145,
+                satisfaction:5,
+                services:["海运","陆运","空运","报关","仓储","快递","跨境铁路"]
+            },
+            {
+                picture:"http://img5.qiyipic.com/image/ppopen/ppopen_58bc3cd018aa706660ad32c0_0.jpg",
+                title:"广州市凯格速物流有限公司",
+                order:145,
+                satisfaction:5,
+                services:["海运","陆运","空运","报关","仓储","快递","跨境铁路"]
+            },
+            {
+                picture:"http://img5.qiyipic.com/image/ppopen/ppopen_58bc3cd018aa706660ad32c0_0.jpg",
+                title:"广州市凯格速物流有限公司",
+                order:145,
+                satisfaction:5,
+                services:["海运","陆运","空运","报关","仓储","快递","跨境铁路"]
+            }],
+        }
+    }
+}
+</script>
+<style lang="scss">
+.shop-item{
+        border: 1px solid #ccc;
+        padding: 15px 20px;
+        display: inline-block;
+        margin: 2% 4% 0 0;
+        .shop-img{
+        width: 300px;
+        height: 170px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    .shop-detail{
+        h3{
+            line-height: 30px;
+            height: 30px;
+        }
+        li{
+            em{
+                font-weight: bold;
+                font-style: normal;
+                vertical-align: middle;
+            }
+            .start-wrap{
+                display: inline-block;
+                padding-left: 10px;
+                line-height: 30px;
+            }
+            .traffic-item{
+                width: 246px;
+                display: inline-block;
+                line-height: 20px;
+                vertical-align: top;
+            }
+        }
+    }
+}
+</style>
+

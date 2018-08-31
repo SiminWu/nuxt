@@ -1,0 +1,15 @@
+body,div{
+  padding:0px;
+}
+ul li{
+list-style-type:none;
+}
+
+.bg-black{
+  background:black;
+  color:white;
+}
+.hand:hover{
+  cursor:pointer;
+}
+

@@ -1,0 +1,27 @@
+<!-- header，footer公共部分-->
+<template>
+    <div>
+        <top-nav></top-nav>
+        <b-footer></b-footer>
+    </div>
+</template>
+<script>
+  import bFooter from '~/components/footer/footer.vue';
+  import topNav from './top-nav.vue';
+
+  export default {
+    components: {
+        bFooter,topNav
+    },
+    data(){
+        return{
+
+        }
+    }
+  }
+</script>
+
+<style lang="scss">
+
+</style>
+

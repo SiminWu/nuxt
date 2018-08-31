@@ -1,0 +1,118 @@
+<template>
+  <div>
+    <div >
+      <!--顶部-->
+      <header>
+        <div class="top-nav-center bg-black">
+          <div class="nav-left inline-sub hand">手机昊链</div>
+          <div class="inline-sub">
+            <ul class="nav-right">
+              <li>登录</li>
+              <li>注册</li>
+              <li>我的消息</li>
+              <li>货主中心</li>
+              <li>商户中心</li>
+              <li>
+               <span> 在线客服</span>
+                <div class="hot-line">电话：400</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+    </div> 
+    <div class="search-all">
+        <img class="logo" src="@/static/logo.jpg" alt="logo">
+        <div class="search-all-btn">
+          <searchbtn></searchbtn> 
+        </div>
+    </div>
+      
+    <nuxt/>
+  </div>
+</template>
+<style  lang="scss">
+  .top-nav-center{
+    display: inline-block;
+    position:relative;
+    flex-direction: row;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    justify-content: space-between;
+    min-width: 1280px;
+    width: 100vw;
+      &>div{
+          padding: 0 30px;
+      }
+    .inline-sub{
+
+
+    }
+    .nav-left{
+      height: 18px;
+      line-height: 18px;
+      margin: 10px 0;
+
+    }
+    .nav-right{
+      display: flex;
+      display: -webkit-flex; /* Safari */
+      margin: 10px 0;
+      li{
+        border-right:1px solid white;
+        padding:0 10px ;
+        &:hover{
+          cursor:pointer;
+          .hot-line{
+            display: block;
+          }
+        }
+
+       }
+      li:last-child{
+        border-right:none;
+      }
+    }
+    .hot-line{
+      position: absolute;
+      background: white;
+      color: black;
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: none;
+    }
+
+  }
+ .logo{
+        width: 100px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10%;
+  }
+  .search-all{
+    justify-content: space-around;
+    min-width: 1200px;
+  }
+  .search-all-btn{
+    display: inline-block;
+    margin-left: 30%;
+    min-width: 300px;
+  }
+</style>
+<script>
+  import searchbtn from '~/components/searchbtn.vue'
+  export default {
+    components: {
+    searchbtn
+    },
+    data () {
+      return {
+
+      }
+    }
+  }
+</script>
+
+
+
