@@ -9,6 +9,7 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '电商前台项目' }
     ],
+  
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
@@ -19,7 +20,8 @@ module.exports = {
 
   ],
   plugins: [
-    { src: '@/plugins/iview.js'}
+    { src: '@/plugins/iview.js'},
+    { src: '@/plugins/axios.js'},
   ],
   /*
   ** Customize the progress bar color

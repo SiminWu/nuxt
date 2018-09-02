@@ -25,63 +25,63 @@ export default {
     data(){
         return{
             shopList:[{
-                picture:"http://img5.qiyipic.com/image/ppopen/ppopen_58bc3cd018aa706660ad32c0_0.jpg",
+                picture:"./head.jpg",
                 title:"广州市凯格速物流有限公司",
                 order:145,
                 satisfaction:5,
                 services:["海运","陆运","空运","报关","仓储","快递","跨境铁路"]
             },
             {
-                picture:"http://img5.qiyipic.com/image/ppopen/ppopen_58bc3cd018aa706660ad32c0_0.jpg",
+                picture:"./head.jpg",
                 title:"广州市凯格速物流有限公司",
                 order:145,
                 satisfaction:5,
                 services:["海运","陆运","空运","报关","仓储","快递","跨境铁路"]
             },
             {
-                picture:"http://img5.qiyipic.com/image/ppopen/ppopen_58bc3cd018aa706660ad32c0_0.jpg",
+                picture:"./head.jpg",
                 title:"广州市凯格速物流有限公司",
                 order:145,
                 satisfaction:5,
                 services:["海运","陆运","空运","报关","仓储","快递","跨境铁路"]
             },
             {
-                picture:"http://img5.qiyipic.com/image/ppopen/ppopen_58bc3cd018aa706660ad32c0_0.jpg",
+                picture:"./head.jpg",
                 title:"广州市凯格速物流有限公司",
                 order:145,
                 satisfaction:5,
                 services:["海运","陆运","空运","报关","仓储","快递","跨境铁路"]
             },
             {
-                picture:"http://img5.qiyipic.com/image/ppopen/ppopen_58bc3cd018aa706660ad32c0_0.jpg",
+                picture:"./head.jpg",
                 title:"广州市凯格速物流有限公司",
                 order:145,
                 satisfaction:5,
                 services:["海运","陆运","空运","报关","仓储","快递","跨境铁路"]
             },
             {
-                picture:"http://img5.qiyipic.com/image/ppopen/ppopen_58bc3cd018aa706660ad32c0_0.jpg",
+                picture:"./head.jpg",
                 title:"广州市凯格速物流有限公司",
                 order:145,
                 satisfaction:5,
                 services:["海运","陆运","空运","报关","仓储","快递","跨境铁路"]
             },
             {
-                picture:"http://img5.qiyipic.com/image/ppopen/ppopen_58bc3cd018aa706660ad32c0_0.jpg",
+                picture:"./head.jpg",
                 title:"广州市凯格速物流有限公司",
                 order:145,
                 satisfaction:5,
                 services:["海运","陆运","空运","报关","仓储","快递","跨境铁路"]
             },
             {
-                picture:"http://img5.qiyipic.com/image/ppopen/ppopen_58bc3cd018aa706660ad32c0_0.jpg",
+                picture:"./head.jpg",
                 title:"广州市凯格速物流有限公司",
                 order:145,
                 satisfaction:5,
                 services:["海运","陆运","空运","报关","仓储","快递","跨境铁路"]
             },
             {
-                picture:"http://img5.qiyipic.com/image/ppopen/ppopen_58bc3cd018aa706660ad32c0_0.jpg",
+                picture:"./head.jpg",
                 title:"广州市凯格速物流有限公司",
                 order:145,
                 satisfaction:5,

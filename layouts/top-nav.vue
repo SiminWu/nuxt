@@ -12,7 +12,7 @@
               <li><nuxt-link to="/my/my-message">我的消息</nuxt-link></li>
               <li><nuxt-link to="/management/vector">货主中心</nuxt-link></li>
               <li><nuxt-link to="/management/sogo">商户中心</nuxt-link></li>
-              <li>
+              <li @click="holine">
                <span> 在线客服</span>
                 <div class="hot-line">电话：400</div>
               </li>
@@ -120,6 +120,12 @@
     data () {
       return {
 
+      }
+    },
+    methods:{
+      holine(){
+        
+        console.log("this.$axios",this.$utils)
       }
     }
   }

@@ -30,7 +30,7 @@
               </span>
               <Button class="red-btn" icon="ios-search">搜索</Button>
           </div>
-          <div class="msg-carousel">
+          <!-- <div class="msg-carousel">
             <Carousel easing="fadeOutUp" dots="none" :autoplay-speed="3000" autoplay loop>
               <CarouselItem>
                   <div class="demo-carousel">【1跨境铁路货盘】李先生,广州市-俄罗斯海明威,整箱,货物名称,截止时间：8月16号...</div>
@@ -45,7 +45,7 @@
                   <div class="demo-carousel">【4跨境铁路货盘】李先生,广州市-俄罗斯海明威,整箱,货物名称,截止时间：8月16号...</div>
               </CarouselItem>
             </Carousel>
-          </div>
+          </div> -->
       </div>
     
 </template>
